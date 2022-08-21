@@ -11,9 +11,9 @@ on:
 
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ./photos-gallery
+    # defaults:
+    #   run:
+    #     working-directory: ./photos-gallery
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,5 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: photos-gallery/yarn.lock
     - run: npm test
     - run: npm run build
