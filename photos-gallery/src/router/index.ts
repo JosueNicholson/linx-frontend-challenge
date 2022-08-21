@@ -18,7 +18,7 @@ const router = createRouter({
         {
           path: "/after-login",
           name: "after-login",
-          component: () => import("../views/HomeView.vue"),
+          component: () => import("../views/AlbumView.vue"),
         },
         {
           path: "/album/:id",
