@@ -11,9 +11,9 @@ on:
 
 jobs:
   build:
-    # defaults:
-    #   run:
-    #     working-directory: ./photos-gallery
+    defaults:
+      run:
+        working-directory: photos-gallery
     runs-on: ubuntu-latest
     strategy:
       matrix:
