@@ -1,7 +1,8 @@
 <template>
-  <div class="input">
-    <label>{{ label }}</label>
+  <div>
+    <label class="label">{{ label }}</label>
     <input
+      class="input"
       @input="handleInput"
       :data="value"
       :type="type"
@@ -26,9 +27,9 @@ function handleInput(payload: Event) {
 }
 </script>
 <style scoped lang="scss">
-.input {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
+//.input {
+//  display: flex;
+//  flex-direction: column;
+//  width: 300px;
+//}
 </style>

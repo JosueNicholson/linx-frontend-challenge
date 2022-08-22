@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button"
+    class="button is-primary"
     :class="dynamicClasses"
     :style="{
       width: `${props.width}px`,
@@ -40,18 +40,18 @@ const dynamicClasses = computed(() => {
 });
 </script>
 <style lang="scss" scoped>
-.border-none {
-  border: none;
-}
+//.border-none {
+//  border: none;
+//}
 
-.primary {
-  background-color: rgb(67, 131, 248);
-  color: white;
-}
+//.primary {
+//  background-color: rgb(67, 131, 248);
+//  color: white;
+//}
 
-.button {
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 4px;
-}
+//.button {
+//  padding: 10px 15px;
+//  cursor: pointer;
+//  border-radius: 4px;
+//}
 </style>

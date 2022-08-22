@@ -18,7 +18,7 @@ const router = createRouter({
         {
           path: "/after-login",
           name: "after-login",
-          component: () => import("../views/AlbumView.vue"),
+          component: () => import("../views/Home/HomeView.vue"),
         },
         {
           path: "/album/:id",
@@ -30,7 +30,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
-  console.log(to);
   const token = window.localStorage.getItem("access_token");
   if (to.name === "after-login") return true;
   if (to.meta?.requiresAuth && !token) return "login";

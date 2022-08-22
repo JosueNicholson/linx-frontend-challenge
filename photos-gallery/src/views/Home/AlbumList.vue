@@ -1,10 +1,23 @@
 <template>
   <p>Álbuns</p>
-  <ul>
-    <li v-for="(album, index) in albums" :key="`album-${index}`">
-      <router-link :to="`/album/${album.id}`">{{ album.title }}</router-link>
-    </li>
-  </ul>
+
+  <div v-for="(album, index) in albums" :key="`album-${index}`">
+    <router-link :to="`/album/${album.id}`">
+      <div class="card mt-5">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img
+              v-if="!album.cover"
+              src="@/assets/img/no-photo-available.png"
+              alt="Placeholder image"
+            />
+            <img v-else src="" alt="" />
+          </figure>
+        </div>
+        <div class="card-content">{{ album.title }}</div>
+      </div>
+    </router-link>
+  </div>
 </template>
 
 <script lang="ts" setup>
