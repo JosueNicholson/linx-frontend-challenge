@@ -1,4 +1,4 @@
-import { get, post } from "@/services/axios-client";
+import { get, post, remove } from "@/services/axios-client";
 import type { ActionContext } from "vuex";
 
 export async function upload(
@@ -36,6 +36,19 @@ export async function fetchAllByAlbum({
       },
       { root: true }
     );
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function deleteImage(
+  { dispatch, rootGetters }: ActionContext<unknown, unknown>,
+  id: string
+) {
+  try {
+    const selectedAlbum = rootGetters["album/album"];
+    await remove(`image/${id}`);
+    dispatch("album/fetchById", selectedAlbum.id, { root: true });
   } catch (error) {
     console.log(error);
   }

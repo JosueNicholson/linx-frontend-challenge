@@ -66,4 +66,8 @@ export function get(url: string, opt = {}) {
   return instance.get(url, opt);
 }
 
+export function remove(url: string, opt = {}) {
+  return instance.delete(url, opt);
+}
+
 export default instance;

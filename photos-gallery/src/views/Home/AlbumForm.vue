@@ -1,5 +1,6 @@
 <template>
   <Input
+    class="mt-5"
     label="Título"
     type="text"
     placeholder="Ex: Meu Álbum"
@@ -12,7 +13,7 @@
     placeholder="Ex: Álbum das férias de verão"
     :value="form.description"
   />
-  <Button text="Enviar" @click-btn="handleSend" />
+  <Button text="Enviar" class="mt-5 mb-5" @click-btn="handleSend" />
 </template>
 
 <script lang="ts" setup>

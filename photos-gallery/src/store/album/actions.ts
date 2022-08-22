@@ -1,4 +1,4 @@
-import { get, post } from "@/services/axios-client";
+import { get, post, remove } from "@/services/axios-client";
 import type { ActionContext } from "vuex";
 
 export async function create(
@@ -37,6 +37,18 @@ export async function fetchById(
   try {
     const { data: res } = await get(`album/${id}`);
     commit("SET_ALBUM", res.data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function deleteAlbum(
+  { dispatch }: ActionContext<unknown, unknown>,
+  id: string
+) {
+  try {
+    await remove(`album/${id}`);
+    dispatch("fetchAll");
   } catch (error) {
     console.log(error);
   }

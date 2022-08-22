@@ -1,11 +1,14 @@
 <template>
-  <div>Seja bem-vindo</div>
+  <div class="mb-5">Seja bem-vindo</div>
   <Button @click-btn="state.showCreateAlbumForm = true" text="Criar Álbum" />
   <div v-if="state.showCreateAlbumForm">
     <AlbumForm />
   </div>
-  <div>
-    <AlbumList />
+  <div class="mt-5">
+    <p>Álbuns</p>
+    <div class="is-flex is-flex-direction-row is-flex-wrap-wrap mb-5">
+      <AlbumList />
+    </div>
   </div>
 </template>
 
