@@ -9,6 +9,10 @@ const router = createRouter({
       component: () => import("../views/LoginView.vue"),
     },
     {
+      path: "/*",
+      redirect: () => ({ name: "login" }),
+    },
+    {
       name: "home",
       path: "/",
       meta: {
@@ -23,6 +27,10 @@ const router = createRouter({
         {
           path: "/album/:id",
           component: () => import("../views/AlbumView.vue"),
+        },
+        {
+          path: "",
+          redirect: () => ({ name: "after-login" }),
         },
       ],
     },
