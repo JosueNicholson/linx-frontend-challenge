@@ -1,5 +1,5 @@
 <template>
-  <div v-if="albums.length">
+  <div v-if="albums?.length">
     <div v-for="(album, index) in albums" :key="`album-${index}`" class="mx-3">
       <div>
         <AlbumCard :album="album" />
